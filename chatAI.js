@@ -23,7 +23,7 @@ let assistants=async(user,msg)=>{
 	let answer='Please ask again.';
 	if (user&&msg){
 		try{
-			let assistant_id="asst_wpegT5qk3IecHfYgAb31PIQh";
+			let assistant_id=" ";
 			let thread_id=db[user];
 			if (!thread_id){
 				let thread = await openai.beta.threads.create();
