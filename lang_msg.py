@@ -94,7 +94,7 @@ qa = RetrievalQA.from_chain_type(
     )
 
 def verify_fb_token(token_sent):
-    if token_sent == "BNL_1234!":
+    if token_sent == " ":
         return request.args.get("hub.challenge")
     return 'Invalid verification token'
 
@@ -107,7 +107,7 @@ def send_message(recipient_id, response):
         "message": {"text": response}
     }
     response = requests.post("https://graph.facebook.com/v2.6/me/messages",
-                             params={"access_token": "EAAPAoW5DI7UBOZBSqDadgYuhliZCDw6bkZB0aaq9jhpZC7Ir0wtgzgezFFYpZA6vznsm35NTKaqpd0CPqjuVTmkBwAyclIHzslZC2CyZCDQMlZBMv27Er65gWCDHxIogwrrSmfBY4vI9X7uZBHljFsDOiZBZBZAQkwVuIuFpKnjIz21H5GaOjRdDQcjXBb3ft036lenT"},
+                             params={"access_token": " "},
                              json=bot_message)
     return response.json()
 
