@@ -18,7 +18,7 @@ client = OpenAI(
 #     )
 # file_id = file.id
 
-assistant = client.beta.assistants.retrieve("asst_wpegT5qk3IecHfYgAb31PIQh")
+assistant = client.beta.assistants.retrieve(" ")
 assistant_id = assistant.id
 
 def verify_fb_token(token_sent):
@@ -36,7 +36,7 @@ def process_with_openai(text):
     # Create Run
     run = client.beta.threads.runs.create(
         thread_id=thread_id,
-        assistant_id="asst_wpegT5qk3IecHfYgAb31PIQh",
+        assistant_id=" ",
         # file_ids=file_id
     )
     run_id = run.id
@@ -63,7 +63,7 @@ def send_message(recipient_id, response):
         "message": {"text": response}
     }
     response = requests.post("https://graph.facebook.com/v2.6/me/messages",
-                             params={"access_token": "EAAPAoW5DI7UBOZBSqDadgYuhliZCDw6bkZB0aaq9jhpZC7Ir0wtgzgezFFYpZA6vznsm35NTKaqpd0CPqjuVTmkBwAyclIHzslZC2CyZCDQMlZBMv27Er65gWCDHxIogwrrSmfBY4vI9X7uZBHljFsDOiZBZBZAQkwVuIuFpKnjIz21H5GaOjRdDQcjXBb3ft036lenT"},
+                             params={"access_token": " "},
                              json=bot_message)
     return response.json()
 
